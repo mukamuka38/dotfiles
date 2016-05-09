@@ -36,3 +36,8 @@ set wildmenu wildmode=list:full
 " 自動的にファイルを読み込むパスを設定 ~/.vim/userautoload/*vim
 set runtimepath+=~/.vim/
 runtime! userautoload/*.vim
+" 文字コード自動判別
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+" 改行コードの自動認識
+set fileformats=unix,dos,mac
