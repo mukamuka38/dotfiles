@@ -34,8 +34,21 @@ set incsearch
 " 補完時の一覧表示機能有効化
 set wildmenu wildmode=list:full
 " 自動的にファイルを読み込むパスを設定 ~/.vim/userautoload/*vim
-set runtimepath+=~/.vim/
-runtime! userautoload/*.vim
+if has("mac")
+" mac用の設定
+elseif has("unix")
+" unix固有の設定
+    set runtimepath+=‾/.vim/
+    runtime! userautoload/*.vim
+elseif has("win64")
+" 64bit_windows固有の設定
+elseif has("win32unix")
+" Cygwin固有の設定
+elseif has("win32")
+" 32bit_windows固有の設定
+    set runtimepath+=‾/_vimfiles/
+    runtime! userautoload/*.vim
+endif
 " 文字コード自動判別
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
