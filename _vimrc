@@ -59,3 +59,6 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+" Undo shortcut - Ctrl-z
+imap <C-z> <esc>:undo<cr>
+nmap <C-z> :undo<cr>
