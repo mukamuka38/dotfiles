@@ -36,6 +36,7 @@ set wildmenu wildmode=list:full
 " OSで分岐できる設定
 if has("mac")
 " mac用の設定
+    set clipboard+=unnamed
 elseif has("unix")
 " unix固有の設定
 " 自動的にファイルを読み込むパスを設定 ~/.vim/userautoload/*vim
