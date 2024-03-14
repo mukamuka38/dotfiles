@@ -54,7 +54,7 @@ elseif has("win32")
 endif
 " 文字コード自動判別
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8,utf-16le
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis,utf-16le
 " 改行コードの自動認識
 set fileformats=unix,dos,mac
 " インデント設定
