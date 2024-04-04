@@ -49,3 +49,13 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^G' peco-src
+
+alias change_profile='(){echo -e "\033]1337;SetProfile=$1\a"}'
+
+if [ "$(uname -m)" = "arm64" ]; then
+  # arm64
+  change_profile ARM
+else
+  # x86_64
+  change_profile Intel
+fi
