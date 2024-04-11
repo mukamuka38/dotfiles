@@ -8,6 +8,12 @@ fi
 
 export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile.$(uname -m)"
 
+if [ ! -e $HOME/.Brew_Date.$(uname -m) ] || [ $(date "+%F") != $(<$HOME/.Brew_Date.$(uname -m)) ]; then
+    brew bundle check --verbose
+    brew bundle cleanup --verbose
+    date "+%F" > $HOME/.Brew_Date.$(uname -m)
+fi
+
 case `uname -n` in
   *MacBook-Air* )
     export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.soc
